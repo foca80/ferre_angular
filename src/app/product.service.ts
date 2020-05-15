@@ -36,6 +36,7 @@ export class ProductService {
       catchError(e => {
         alert(e.status+ ":" + e.error.message)
       return throwError;
+      })
     );
   }
   getProductsListDescripcion(descripcion:String) : Observable<any>{
