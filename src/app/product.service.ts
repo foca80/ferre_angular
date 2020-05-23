@@ -13,8 +13,10 @@ export class ProductService {
   //inyectamos y no olvidar importarlo en app.module.ts
   constructor(private http: HttpClient) { }
 
-  getProduct(id: number) : Observable<Object>{
-    return this.http.get('${this.baseUrl}/${id}')
+  getProduct(id: number) : Observable<any>{
+    console.log("enviando rest get product");
+    console.log(this.urlBase+ '/product/'+ id);
+    return this.http.get(this.urlBase+ '/product/'+ id);
   }
   
   createProduct(product: Object): Observable<Object>{
